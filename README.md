@@ -1,3 +1,11 @@
+# [Set Trainer](https://lilleswing.github.io/set-trainer/)
+
+A tool to get less bad at the game [Set](https://en.wikipedia.org/wiki/Set_(card_game))
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
