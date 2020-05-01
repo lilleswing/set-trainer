@@ -158,7 +158,7 @@ function App() {
         const i = Math.floor(Math.random() * ALL_CARDS.length);
         return <Card img={"labeled/" + ALL_CARDS[i]}
                      fname={ALL_CARDS[i]}
-                     key={ALL_CARDS[i]}
+                     key={Math.random() + ALL_CARDS[i]}
                      onClick={updateWrong}/>
     }
 
@@ -194,7 +194,7 @@ function App() {
             let myCard = <Card img={"labeled/" + answerFromArray(allAnswers[i])}
                                fname={answerFromArray(allAnswers[i])}
                                onClick={updateWrong}
-                               key={answerFromArray(allAnswers[i])}/>;
+                               key={Math.random() + answerFromArray(allAnswers[i])}/>;
             cards.push(myCard);
         }
         return cards;
@@ -221,7 +221,7 @@ function App() {
         let answerCard = <Card img={"labeled/" + answerFromArray(answer)}
                                fname={answerFromArray(answer)}
                                onClick={updateRight}
-                               key="correctAnswer"/>;
+                               key={Math.random() + "correctAnswer"}/>;
         let closeCards = getCloseAnswers(answer);
 
         let retval = closeCards.concat([answerCard, randomCard()]);
