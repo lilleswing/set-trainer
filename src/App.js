@@ -223,8 +223,11 @@ function App() {
                                onClick={updateRight}
                                key={Math.random() + "correctAnswer"}/>;
         let closeCards = getCloseAnswers(answer);
+        closeCards = closeCards.concat([randomCard(), randomCard(), randomCard()]);
+        closeCards = shuffle(closeCards)
+        closeCards = closeCards.slice(0,5);
 
-        let retval = closeCards.concat([answerCard, randomCard()]);
+        let retval = closeCards.concat([answerCard]);
         return shuffle(retval)
     }
 
