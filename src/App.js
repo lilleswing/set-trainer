@@ -139,12 +139,19 @@ function getOther(categories, curVal) {
 function App() {
     const [scoreboard, setScoreboard] = useState({
         "correct": 0,
-        "wrong": 0
+        "wrong": 0,
+        "startTime": new Date().getTime() / 1000,
+        "solveTime": -1,
     });
     let updateRight = function () {
         console.log("LOLOLOL");
         let newScoreboard = deepCopy(scoreboard);
         newScoreboard['correct'] = newScoreboard['correct'] + 1;
+        if (newScoreboard['correct'] === 20) {
+            let now = new Date().getTime() / 1000;
+            let timeElapsed = now - newScoreboard['startTime'];
+            newScoreboard['solveTime'] = timeElapsed;
+        }
         setScoreboard(newScoreboard);
     };
 
@@ -225,7 +232,7 @@ function App() {
         let closeCards = getCloseAnswers(answer);
         closeCards = closeCards.concat([randomCard(), randomCard(), randomCard()]);
         closeCards = shuffle(closeCards)
-        closeCards = closeCards.slice(0,5);
+        closeCards = closeCards.slice(0, 5);
 
         let retval = closeCards.concat([answerCard]);
         return shuffle(retval)
@@ -245,6 +252,9 @@ function App() {
                         Correct: {scoreboard['correct']}
                         <br></br>
                         Wrong: {scoreboard['wrong']}
+                        { scoreboard['solveTime'] !== -1 &&
+                            <h1>Total Time: {scoreboard['solveTime']}</h1>
+                        }
                     </p>
                 </div>
                 <div className='rowC'>
