@@ -207,6 +207,38 @@ function App() {
         return cards;
     }
 
+    function removeDuplicates(queryCard1, queryCard2, answer, decoys) {
+        let d = {};
+        decoys = shuffle(decoys);
+        d[answer.props.fname] = answer;
+        console.log(decoys);
+        for (const decoyCard of decoys) {
+            if (Object.keys(d).length >= 6) {
+                continue
+            }
+            if (decoyCard.props.fname === answer.props.fname) {
+                continue;
+            }
+            if (decoyCard.props.fname === queryCard1.props.fname) {
+                continue;
+            }
+            if (decoyCard.props.fname === queryCard2.props.fname) {
+                continue;
+            }
+            d[decoyCard.props.fname] = decoyCard;
+        }
+        return Object.values(d);
+    }
+
+    function randomTwoCards() {
+        let c1 = randomCard();
+        let c2 = randomCard();
+        while (c1.props.fname === c2.props.fname) {
+            c2 = randomCard();
+        }
+        return [c1, c2];
+    }
+
 
     function getOtherCards(c1, c2) {
 
@@ -231,15 +263,10 @@ function App() {
                                key={Math.random() + "correctAnswer"}/>;
         let closeCards = getCloseAnswers(answer);
         closeCards = closeCards.concat([randomCard(), randomCard(), randomCard()]);
-        closeCards = shuffle(closeCards)
-        closeCards = closeCards.slice(0, 5);
-
-        let retval = closeCards.concat([answerCard]);
-        return shuffle(retval)
+        return removeDuplicates(c1, c2, answerCard, closeCards);
     }
 
-    const myCard1 = randomCard();
-    const myCard2 = randomCard();
+    const [myCard1, myCard2] = randomTwoCards();
     const possibleAnswers = getOtherCards(myCard1, myCard2);
 
     return (
@@ -252,8 +279,8 @@ function App() {
                         Correct: {scoreboard['correct']}
                         <br></br>
                         Wrong: {scoreboard['wrong']}
-                        { scoreboard['solveTime'] !== -1 &&
-                            <h1>Total Time: {scoreboard['solveTime']}</h1>
+                        {scoreboard['solveTime'] !== -1 &&
+                        <h1>Total Time: {scoreboard['solveTime']}</h1>
                         }
                     </p>
                 </div>
