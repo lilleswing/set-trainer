@@ -160,6 +160,7 @@ function App() {
 
     let updateWrong = function () {
         let newScoreboard = deepCopy(scoreboard);
+        alert("DWIGHT YOU IGNORANT SLUT");
         newScoreboard['wrong'] = newScoreboard['wrong'] + 1;
         setScoreboard(newScoreboard);
     };
@@ -280,15 +281,17 @@ function App() {
                 <div className='rowC'>
                     {myCard1}
                     {myCard2}
-                    <p>
-                        <h1> Race To 20! </h1>
-                        Correct: {scoreboard['correct']}
-                        <br></br>
-                        Wrong: {scoreboard['wrong']}
-                        {scoreboard['solveTime'] !== -1 &&
-                        <h1>Total Time: {scoreboard['solveTime']}</h1>
-                        }
-                    </p>
+                    <div className={"scoreBoard"}>
+                        <h1 className={"hr"}> Race To 20! </h1>
+                        <p>
+                            Correct: {scoreboard['correct']}
+                            <br></br>
+                            Wrong: {scoreboard['wrong']}
+                            {scoreboard['solveTime'] !== -1 &&
+                            <h1>Total Time: {scoreboard['solveTime']}</h1>
+                            }
+                        </p>
+                    </div>
                 </div>
                 <div className='rowC'>
                     {possibleAnswers[0]}

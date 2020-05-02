@@ -15,13 +15,34 @@ code {
 .board {
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}
+
+.hr {
+    width: 100%;
 }
 
 .rowC {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
-.hidden {
-    display: none;
+.scoreBoard {
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    width: 450px;
+    height: auto;
+}
+
+.card {
+    height: auto;
+    width: 450px;
 }
