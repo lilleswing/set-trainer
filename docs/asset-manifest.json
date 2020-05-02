@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "https://lilleswing.github.io/set-trainer/static/css/main.83e41323.chunk.css",
-    "main.js": "https://lilleswing.github.io/set-trainer/static/js/main.00395052.chunk.js",
-    "main.js.map": "https://lilleswing.github.io/set-trainer/static/js/main.00395052.chunk.js.map",
+    "main.css": "https://lilleswing.github.io/set-trainer/static/css/main.9bfc5074.chunk.css",
+    "main.js": "https://lilleswing.github.io/set-trainer/static/js/main.9ff56919.chunk.js",
+    "main.js.map": "https://lilleswing.github.io/set-trainer/static/js/main.9ff56919.chunk.js.map",
     "runtime-main.js": "https://lilleswing.github.io/set-trainer/static/js/runtime-main.5aa85ab5.js",
     "runtime-main.js.map": "https://lilleswing.github.io/set-trainer/static/js/runtime-main.5aa85ab5.js.map",
     "static/js/2.c4443ef9.chunk.js": "https://lilleswing.github.io/set-trainer/static/js/2.c4443ef9.chunk.js",
     "static/js/2.c4443ef9.chunk.js.map": "https://lilleswing.github.io/set-trainer/static/js/2.c4443ef9.chunk.js.map",
     "index.html": "https://lilleswing.github.io/set-trainer/index.html",
-    "precache-manifest.7aa3ecd9645db67df8ef57dc1a61140f.js": "https://lilleswing.github.io/set-trainer/precache-manifest.7aa3ecd9645db67df8ef57dc1a61140f.js",
+    "precache-manifest.fdd582fa7af08b6cc3e3f98819eeec46.js": "https://lilleswing.github.io/set-trainer/precache-manifest.fdd582fa7af08b6cc3e3f98819eeec46.js",
     "service-worker.js": "https://lilleswing.github.io/set-trainer/service-worker.js",
-    "static/css/main.83e41323.chunk.css.map": "https://lilleswing.github.io/set-trainer/static/css/main.83e41323.chunk.css.map",
+    "static/css/main.9bfc5074.chunk.css.map": "https://lilleswing.github.io/set-trainer/static/css/main.9bfc5074.chunk.css.map",
     "static/js/2.c4443ef9.chunk.js.LICENSE.txt": "https://lilleswing.github.io/set-trainer/static/js/2.c4443ef9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5aa85ab5.js",
     "static/js/2.c4443ef9.chunk.js",
-    "static/css/main.83e41323.chunk.css",
-    "static/js/main.00395052.chunk.js"
+    "static/css/main.9bfc5074.chunk.css",
+    "static/js/main.9ff56919.chunk.js"
   ]
 }

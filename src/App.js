@@ -283,6 +283,7 @@ function App() {
                     {myCard2}
                     <div className={"scoreBoard"}>
                         <h1 className={"hr"}> Race To 20! </h1>
+                        <h5>Match The Top Two Cards</h5>
                         <p>
                             Correct: {scoreboard['correct']}
                             <br></br>
