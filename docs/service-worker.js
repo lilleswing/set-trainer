@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "https://lilleswing.github.io/set-trainer/precache-manifest.ce0f9ae0ca54491087aa2407944e8e2b.js"
+  "https://lilleswing.github.io/set-trainer/precache-manifest.b71e6b263aa9c11054a564116e07225c.js"
 );
 
 self.addEventListener('message', (event) => {

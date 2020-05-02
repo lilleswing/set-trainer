@@ -233,7 +233,7 @@ function App() {
             tableCards[decoyCard.props.fname] = true;
             d[decoyCard.props.fname] = decoyCard;
         }
-        return Object.values(d);
+        return shuffle(Object.values(d));
     }
 
     function randomTwoCards() {
