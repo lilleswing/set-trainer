@@ -147,6 +147,9 @@ function App() {
         console.log("LOLOLOL");
         let newScoreboard = deepCopy(scoreboard);
         newScoreboard['correct'] = newScoreboard['correct'] + 1;
+        if (newScoreboard['correct'] === 1) {
+            newScoreboard["startTime"] = new Date().getTime() / 1000;
+        }
         if (newScoreboard['correct'] === 20) {
             let now = new Date().getTime() / 1000;
             let timeElapsed = now - newScoreboard['startTime'];
@@ -209,22 +212,25 @@ function App() {
 
     function removeDuplicates(queryCard1, queryCard2, answer, decoys) {
         let d = {};
+        let tableCards = {};
+        for (const card of [queryCard1, queryCard2, answer]) {
+            tableCards[card.props.fname] = true;
+        }
         decoys = shuffle(decoys);
         d[answer.props.fname] = answer;
-        console.log(decoys);
         for (const decoyCard of decoys) {
             if (Object.keys(d).length >= 6) {
                 continue
             }
-            if (decoyCard.props.fname === answer.props.fname) {
-                continue;
+            tableCards[decoyCard.props.fname] = true;
+            d[decoyCard.props.fname] = decoyCard;
+        }
+        while (Object.keys(d).length < 6) {
+            let decoyCard = randomCard();
+            if (decoyCard.props.fname in tableCards) {
+                continue
             }
-            if (decoyCard.props.fname === queryCard1.props.fname) {
-                continue;
-            }
-            if (decoyCard.props.fname === queryCard2.props.fname) {
-                continue;
-            }
+            tableCards[decoyCard.props.fname] = true;
             d[decoyCard.props.fname] = decoyCard;
         }
         return Object.values(d);
@@ -241,7 +247,6 @@ function App() {
 
 
     function getOtherCards(c1, c2) {
-
         let fname1 = c1.props.fname.slice(0, -4);
         let fname2 = c2.props.fname.slice(0, -4);
         let vars1 = fname1.split('-');
@@ -276,6 +281,7 @@ function App() {
                     {myCard1}
                     {myCard2}
                     <p>
+                        <h1> Race To 20! </h1>
                         Correct: {scoreboard['correct']}
                         <br></br>
                         Wrong: {scoreboard['wrong']}

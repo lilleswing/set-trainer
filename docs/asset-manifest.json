@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "https://lilleswing.github.io/set-trainer/static/css/main.9d02484d.chunk.css",
-    "main.js": "https://lilleswing.github.io/set-trainer/static/js/main.0cfaf089.chunk.js",
-    "main.js.map": "https://lilleswing.github.io/set-trainer/static/js/main.0cfaf089.chunk.js.map",
+    "main.js": "https://lilleswing.github.io/set-trainer/static/js/main.71e38a49.chunk.js",
+    "main.js.map": "https://lilleswing.github.io/set-trainer/static/js/main.71e38a49.chunk.js.map",
     "runtime-main.js": "https://lilleswing.github.io/set-trainer/static/js/runtime-main.5aa85ab5.js",
     "runtime-main.js.map": "https://lilleswing.github.io/set-trainer/static/js/runtime-main.5aa85ab5.js.map",
     "static/js/2.c4443ef9.chunk.js": "https://lilleswing.github.io/set-trainer/static/js/2.c4443ef9.chunk.js",
     "static/js/2.c4443ef9.chunk.js.map": "https://lilleswing.github.io/set-trainer/static/js/2.c4443ef9.chunk.js.map",
     "index.html": "https://lilleswing.github.io/set-trainer/index.html",
-    "precache-manifest.4b1b4387b8c70e74a3a09a6db17848a5.js": "https://lilleswing.github.io/set-trainer/precache-manifest.4b1b4387b8c70e74a3a09a6db17848a5.js",
+    "precache-manifest.ce0f9ae0ca54491087aa2407944e8e2b.js": "https://lilleswing.github.io/set-trainer/precache-manifest.ce0f9ae0ca54491087aa2407944e8e2b.js",
     "service-worker.js": "https://lilleswing.github.io/set-trainer/service-worker.js",
     "static/css/main.9d02484d.chunk.css.map": "https://lilleswing.github.io/set-trainer/static/css/main.9d02484d.chunk.css.map",
     "static/js/2.c4443ef9.chunk.js.LICENSE.txt": "https://lilleswing.github.io/set-trainer/static/js/2.c4443ef9.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.5aa85ab5.js",
     "static/js/2.c4443ef9.chunk.js",
     "static/css/main.9d02484d.chunk.css",
-    "static/js/main.0cfaf089.chunk.js"
+    "static/js/main.71e38a49.chunk.js"
   ]
 }
