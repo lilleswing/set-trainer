@@ -223,6 +223,9 @@ function App() {
             if (Object.keys(d).length >= 6) {
                 continue
             }
+            if (decoyCard.props.fname in tableCards) {
+                continue
+            }
             tableCards[decoyCard.props.fname] = true;
             d[decoyCard.props.fname] = decoyCard;
         }
