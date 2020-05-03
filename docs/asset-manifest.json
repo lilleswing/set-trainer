@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "https://lilleswing.github.io/set-trainer/static/css/main.9bfc5074.chunk.css",
-    "main.js": "https://lilleswing.github.io/set-trainer/static/js/main.f7f2afa6.chunk.js",
-    "main.js.map": "https://lilleswing.github.io/set-trainer/static/js/main.f7f2afa6.chunk.js.map",
+    "main.js": "https://lilleswing.github.io/set-trainer/static/js/main.ecadd5b3.chunk.js",
+    "main.js.map": "https://lilleswing.github.io/set-trainer/static/js/main.ecadd5b3.chunk.js.map",
     "runtime-main.js": "https://lilleswing.github.io/set-trainer/static/js/runtime-main.5aa85ab5.js",
     "runtime-main.js.map": "https://lilleswing.github.io/set-trainer/static/js/runtime-main.5aa85ab5.js.map",
-    "static/js/2.2c3c2f49.chunk.js": "https://lilleswing.github.io/set-trainer/static/js/2.2c3c2f49.chunk.js",
-    "static/js/2.2c3c2f49.chunk.js.map": "https://lilleswing.github.io/set-trainer/static/js/2.2c3c2f49.chunk.js.map",
+    "static/js/2.0595acea.chunk.js": "https://lilleswing.github.io/set-trainer/static/js/2.0595acea.chunk.js",
+    "static/js/2.0595acea.chunk.js.map": "https://lilleswing.github.io/set-trainer/static/js/2.0595acea.chunk.js.map",
     "index.html": "https://lilleswing.github.io/set-trainer/index.html",
-    "precache-manifest.a59198064c46fe0f78edc616127c8f12.js": "https://lilleswing.github.io/set-trainer/precache-manifest.a59198064c46fe0f78edc616127c8f12.js",
+    "precache-manifest.43b5d5f6e8fd6d95536a6c15d3904a0f.js": "https://lilleswing.github.io/set-trainer/precache-manifest.43b5d5f6e8fd6d95536a6c15d3904a0f.js",
     "service-worker.js": "https://lilleswing.github.io/set-trainer/service-worker.js",
     "static/css/main.9bfc5074.chunk.css.map": "https://lilleswing.github.io/set-trainer/static/css/main.9bfc5074.chunk.css.map",
-    "static/js/2.2c3c2f49.chunk.js.LICENSE.txt": "https://lilleswing.github.io/set-trainer/static/js/2.2c3c2f49.chunk.js.LICENSE.txt"
+    "static/js/2.0595acea.chunk.js.LICENSE.txt": "https://lilleswing.github.io/set-trainer/static/js/2.0595acea.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.5aa85ab5.js",
-    "static/js/2.2c3c2f49.chunk.js",
+    "static/js/2.0595acea.chunk.js",
     "static/css/main.9bfc5074.chunk.css",
-    "static/js/main.f7f2afa6.chunk.js"
+    "static/js/main.ecadd5b3.chunk.js"
   ]
 }
