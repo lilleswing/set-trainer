@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b5f7dc30f5c75004263b0dbaff8ebe72",
+    "revision": "4afd7623fe16db18b5bd67eefee4195c",
     "url": "https://lilleswing.github.io/set-trainer/index.html"
   },
   {
-    "revision": "e54aea082d743681f71b",
+    "revision": "baba298abd431cfcd36d",
     "url": "https://lilleswing.github.io/set-trainer/static/css/main.9bfc5074.chunk.css"
   },
   {
-    "revision": "d8caf0cb1ad176e5296c",
-    "url": "https://lilleswing.github.io/set-trainer/static/js/2.c4443ef9.chunk.js"
+    "revision": "7f586453834dec0222d2",
+    "url": "https://lilleswing.github.io/set-trainer/static/js/2.2c3c2f49.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "https://lilleswing.github.io/set-trainer/static/js/2.c4443ef9.chunk.js.LICENSE.txt"
+    "url": "https://lilleswing.github.io/set-trainer/static/js/2.2c3c2f49.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e54aea082d743681f71b",
-    "url": "https://lilleswing.github.io/set-trainer/static/js/main.9ff56919.chunk.js"
+    "revision": "baba298abd431cfcd36d",
+    "url": "https://lilleswing.github.io/set-trainer/static/js/main.f7f2afa6.chunk.js"
   },
   {
     "revision": "6d6dd3ca7a4655746d80",
