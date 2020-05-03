@@ -1,0 +1,14 @@
+{
+  "channels": [
+  ],
+  "packages": [
+    "yarn",
+    "make"
+  ],
+  "wheels": [
+  ],
+  "cpu_packages": [
+  ],
+  "gpu_packages": [
+  ]
+}
