@@ -164,11 +164,11 @@ export class BoardRandomizer {
             allAnswers.push(thisAnswer);
         }
         let cards = [];
-        for (let i = 0; i < allAnswers.length; i++) {
-            let myCard = <Card img={"labeled/" + this.answerFromArray(allAnswers[i])}
-                               fname={this.answerFromArray(allAnswers[i])}
+        for (const myAnswer of allAnswers) {
+            let myCard = <Card img={"labeled/" + this.answerFromArray(myAnswer)}
+                               fname={this.answerFromArray(myAnswer)}
                                onClick={this.updateWrong}
-                               key={this.answerFromArray(allAnswers[i])}/>;
+                               key={this.answerFromArray(myAnswer)}/>;
             cards.push(myCard);
         }
         return cards;
@@ -213,8 +213,7 @@ export class BoardRandomizer {
 }
 
 function pickDifferent(category, v1, v2) {
-    for (let i = 0; i < category.length; i++) {
-        let myCat = category[i];
+    for (const myCat of category) {
         if (myCat !== v1 && myCat !== v2) {
             return myCat
         }
@@ -248,9 +247,9 @@ let shuffle = function (array) {
 
 function getOther(categories, curVal) {
     let chances = [];
-    for (let i = 0; i < categories.length; i++) {
-        if (categories[i] !== curVal) {
-            chances.push(categories[i])
+    for (const myCategory of categories) {
+        if (myCategory !== curVal) {
+            chances.push(myCategory)
         }
     }
     chances = shuffle(chances);
