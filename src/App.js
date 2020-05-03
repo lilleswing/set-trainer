@@ -92,126 +92,21 @@ let CATEGORIES = [
     ['diamond', 'squiggle', 'capsule']
 ];
 
-function pickDifferent(category, v1, v2) {
-    for (let i = 0; i < category.length; i++) {
-        let myCat = category[i];
-        if (myCat !== v1 && myCat !== v2) {
-            return myCat
-        }
-    }
-}
-
-function deepCopy(o) {
-    return JSON.parse(JSON.stringify(o))
-}
-
-let shuffle = function (array) {
-
-    var currentIndex = array.length;
-    var temporaryValue, randomIndex;
-
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
+export class BoardRandomizer {
+    constructor(updateRight, updateWrong) {
+        this.updateRight = updateRight;
+        this.updateWrong = updateWrong;
     }
 
-    return array;
-};
-
-function getOther(categories, curVal) {
-    let chances = []
-    for (let i = 0; i < categories.length; i++) {
-        if (categories[i] !== curVal) {
-            chances.push(categories[i])
-        }
-    }
-    chances = shuffle(chances);
-    return chances[0]
-}
-
-function App() {
-    const [scoreboard, setScoreboard] = useState({
-        "correct": 0,
-        "wrong": 0,
-        "startTime": new Date().getTime() / 1000,
-        "solveTime": -1,
-    });
-    let updateRight = function () {
-        console.log("LOLOLOL");
-        let newScoreboard = deepCopy(scoreboard);
-        newScoreboard['correct'] = newScoreboard['correct'] + 1;
-        if (newScoreboard['correct'] === 1) {
-            newScoreboard["startTime"] = new Date().getTime() / 1000;
-        }
-        if (newScoreboard['correct'] === 20) {
-            let now = new Date().getTime() / 1000;
-            let timeElapsed = now - newScoreboard['startTime'];
-            newScoreboard['solveTime'] = timeElapsed;
-        }
-        setScoreboard(newScoreboard);
-    };
-
-    let updateWrong = function () {
-        let newScoreboard = deepCopy(scoreboard);
-        alert("DWIGHT YOU IGNORANT SLUT");
-        newScoreboard['wrong'] = newScoreboard['wrong'] + 1;
-        setScoreboard(newScoreboard);
-    };
-
-    function randomCard() {
+    randomCard() {
         const i = Math.floor(Math.random() * ALL_CARDS.length);
         return <Card img={"labeled/" + ALL_CARDS[i]}
                      fname={ALL_CARDS[i]}
-                     key={Math.random() + ALL_CARDS[i]}
-                     onClick={updateWrong}/>
-    }
+                     key={ALL_CARDS[i]}
+                     onClick={this.updateWrong}/>
+    };
 
-    function answerFromArray(arr) {
-        let retval = "";
-        for (let i = 0; i < arr.length; i++) {
-            if (i !== 0) {
-                retval += "-";
-            }
-            retval += arr[i];
-        }
-        retval += ".jpg";
-        return retval;
-    }
-
-    function getCloseAnswers(arr) {
-        let allAnswers = [];
-        for (let i = 0; i < arr.length; i++) {
-            let thisAnswer = [];
-            for (let j = 0; j < arr.length; j++) {
-                if (i !== j) {
-                    thisAnswer.push(arr[j]);
-                } else {
-                    let curVal = arr[j];
-                    let piece = getOther(CATEGORIES[i], curVal);
-                    thisAnswer.push(piece);
-                }
-            }
-            allAnswers.push(thisAnswer);
-        }
-        let cards = [];
-        for (let i = 0; i < allAnswers.length; i++) {
-            let myCard = <Card img={"labeled/" + answerFromArray(allAnswers[i])}
-                               fname={answerFromArray(allAnswers[i])}
-                               onClick={updateWrong}
-                               key={Math.random() + answerFromArray(allAnswers[i])}/>;
-            cards.push(myCard);
-        }
-        return cards;
-    }
-
-    function removeDuplicates(queryCard1, queryCard2, answer, decoys) {
+    removeDuplicates(queryCard1, queryCard2, answer, decoys) {
         let d = {};
         let tableCards = {};
         for (const card of [queryCard1, queryCard2, answer]) {
@@ -230,7 +125,7 @@ function App() {
             d[decoyCard.props.fname] = decoyCard;
         }
         while (Object.keys(d).length < 6) {
-            let decoyCard = randomCard();
+            let decoyCard = this.randomCard();
             if (decoyCard.props.fname in tableCards) {
                 continue
             }
@@ -238,19 +133,59 @@ function App() {
             d[decoyCard.props.fname] = decoyCard;
         }
         return shuffle(Object.values(d));
-    }
+    };
 
-    function randomTwoCards() {
-        let c1 = randomCard();
-        let c2 = randomCard();
+    answerFromArray(arr) {
+        let retval = "";
+        for (let i = 0; i < arr.length; i++) {
+            if (i !== 0) {
+                retval += "-";
+            }
+            retval += arr[i];
+        }
+        retval += ".jpg";
+        return retval;
+    };
+
+
+    getCloseAnswers(arr) {
+        let allAnswers = [];
+        for (let i = 0; i < arr.length; i++) {
+            let thisAnswer = [];
+            for (let j = 0; j < arr.length; j++) {
+                if (i !== j) {
+                    thisAnswer.push(arr[j]);
+                } else {
+                    let curVal = arr[j];
+                    let piece = getOther(CATEGORIES[i], curVal);
+                    thisAnswer.push(piece);
+                }
+            }
+            allAnswers.push(thisAnswer);
+        }
+        let cards = [];
+        for (let i = 0; i < allAnswers.length; i++) {
+            let myCard = <Card img={"labeled/" + this.answerFromArray(allAnswers[i])}
+                               fname={this.answerFromArray(allAnswers[i])}
+                               onClick={this.updateWrong}
+                               key={this.answerFromArray(allAnswers[i])}/>;
+            cards.push(myCard);
+        }
+        return cards;
+    };
+
+
+    randomTwoCards() {
+        let c1 = this.randomCard();
+        let c2 = this.randomCard();
         while (c1.props.fname === c2.props.fname) {
-            c2 = randomCard();
+            c2 = this.randomCard();
         }
         return [c1, c2];
-    }
+    };
 
 
-    function getOtherCards(c1, c2) {
+    getOtherCards(c1, c2) {
         let fname1 = c1.props.fname.slice(0, -4);
         let fname2 = c2.props.fname.slice(0, -4);
         let vars1 = fname1.split('-');
@@ -265,18 +200,95 @@ function App() {
             let piece = pickDifferent(CATEGORIES[i], vars1[i], vars2[i]);
             answer.push(piece);
         }
-        console.log(answer);
-        let answerCard = <Card img={"labeled/" + answerFromArray(answer)}
-                               fname={answerFromArray(answer)}
-                               onClick={updateRight}
-                               key={Math.random() + "correctAnswer"}/>;
-        let closeCards = getCloseAnswers(answer);
-        closeCards = closeCards.concat([randomCard(), randomCard(), randomCard()]);
-        return removeDuplicates(c1, c2, answerCard, closeCards);
+        let answerCard = <Card img={"labeled/" + this.answerFromArray(answer)}
+                               fname={this.answerFromArray(answer)}
+                               onClick={this.updateRight}
+                               key={"correctAnswer"}/>;
+        let closeCards = this.getCloseAnswers(answer);
+        closeCards = closeCards.concat([this.randomCard(),
+            this.randomCard(), this.randomCard()]);
+        return this.removeDuplicates(c1, c2, answerCard, closeCards);
     }
 
-    const [myCard1, myCard2] = randomTwoCards();
-    const possibleAnswers = getOtherCards(myCard1, myCard2);
+}
+
+function pickDifferent(category, v1, v2) {
+    for (let i = 0; i < category.length; i++) {
+        let myCat = category[i];
+        if (myCat !== v1 && myCat !== v2) {
+            return myCat
+        }
+    }
+}
+
+
+function deepCopy(o) {
+    return JSON.parse(JSON.stringify(o))
+}
+
+
+let shuffle = function (array) {
+    let currentIndex = array.length;
+    let temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+};
+
+function getOther(categories, curVal) {
+    let chances = [];
+    for (let i = 0; i < categories.length; i++) {
+        if (categories[i] !== curVal) {
+            chances.push(categories[i])
+        }
+    }
+    chances = shuffle(chances);
+    return chances[0]
+}
+
+function App() {
+    const [scoreboard, setScoreboard] = useState({
+        "correct": 0,
+        "wrong": 0,
+        "startTime": new Date().getTime() / 1000,
+        "solveTime": -1,
+    });
+
+
+    let updateRight = function () {
+        let newScoreboard = deepCopy(scoreboard);
+        newScoreboard['correct'] = newScoreboard['correct'] + 1;
+        if (newScoreboard['correct'] === 1) {
+            newScoreboard["startTime"] = new Date().getTime() / 1000;
+        }
+        if (newScoreboard['correct'] === 20) {
+            let now = new Date().getTime() / 1000;
+            newScoreboard['solveTime'] = now - newScoreboard['startTime'];
+        }
+        setScoreboard(newScoreboard);
+    };
+
+    let updateWrong = function () {
+        let newScoreboard = deepCopy(scoreboard);
+        alert("DWIGHT YOU IGNORANT SLUT");
+        newScoreboard['wrong'] = newScoreboard['wrong'] + 1;
+        setScoreboard(newScoreboard);
+    };
+
+    let br = new BoardRandomizer(updateRight, updateWrong);
+    const [myCard1, myCard2] = br.randomTwoCards();
+    const possibleAnswers = br.getOtherCards(myCard1, myCard2);
 
     return (
         <div className="App">
@@ -289,7 +301,7 @@ function App() {
                         <h5>Match The Top Two Cards</h5>
                         <p>
                             Correct: {scoreboard['correct']}
-                            <br></br>
+                            <br/>
                             Wrong: {scoreboard['wrong']}
                             {scoreboard['solveTime'] !== -1 &&
                             <h1>Total Time: {scoreboard['solveTime']}</h1>

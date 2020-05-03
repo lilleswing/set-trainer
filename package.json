@@ -8,13 +8,15 @@
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.1",
+    "jest-junit": "^10.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build-production": "PUBLIC_URL=https://lilleswing.github.io/set-trainer/ react-scripts build",
     "test": "react-scripts test",
+    "test:ci": "CI=1 react-scripts test --env=jsdom --reporters=jest-junit",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
