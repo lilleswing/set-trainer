@@ -310,14 +310,10 @@ function App() {
                     </div>
                 </div>
                 <div className='rowC'>
-                    {possibleAnswers[0]}
-                    {possibleAnswers[1]}
-                    {possibleAnswers[2]}
+                    {[possibleAnswers[0], possibleAnswers[1], possibleAnswers[2]]}
                 </div>
                 <div className='rowC'>
-                    {possibleAnswers[3]}
-                    {possibleAnswers[4]}
-                    {possibleAnswers[5]}
+                    {[possibleAnswers[3], possibleAnswers[4], possibleAnswers[5]]}
                 </div>
             </div>
         </div>
