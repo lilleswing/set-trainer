@@ -1,4 +1,4 @@
-.PHONY : build test-ci dev
+.PHONY : build test-ci dev package
 
 build:
 	rm -rf docs/*
@@ -14,3 +14,7 @@ install:
 dev:
 	yarn install
 	yarn start
+
+package:
+	rm -rf docs.tar.gz
+	tar czf docs.tar.gz docs

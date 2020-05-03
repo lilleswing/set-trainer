@@ -6,3 +6,4 @@ source activate set_trainer
 
 make test-ci
 make build
+make package

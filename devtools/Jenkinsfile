@@ -25,6 +25,8 @@ podTemplate(label: label,
             }
 
             stage('package') {
+                junit 'junit.xml'
+                archiveArtifacts 'docs.tar.gz'
             }
         }
     }
