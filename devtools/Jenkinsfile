@@ -17,7 +17,7 @@ podTemplate(label: label,
                 }
             }
 
-            stage('Generate Plots') {
+            stage('Build Website') {
                 container('ubuntu') {
                     sh '''#!/bin/bash
                     bash devtools/jenkins.sh'''
