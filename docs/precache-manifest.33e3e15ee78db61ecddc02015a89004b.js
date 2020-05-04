@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "edb0acb8f68791b03988efabd9912455",
+    "revision": "39284791b9ca97514fcab59293db2151",
     "url": "https://lilleswing.github.io/set-trainer/index.html"
   },
   {
