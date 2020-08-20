@@ -98,12 +98,12 @@ export class BoardRandomizer {
         this.updateWrong = updateWrong;
     }
 
-    randomCard() {
+    randomCard(isActive = true) {
         const i = Math.floor(Math.random() * ALL_CARDS.length);
         return <Card img={"labeled/" + ALL_CARDS[i]}
                      fname={ALL_CARDS[i]}
                      key={ALL_CARDS[i]}
-                     onClick={this.updateWrong}/>
+                     onClick={isActive ? this.updateWrong : null}/>
     };
 
     removeDuplicates(queryCard1, queryCard2, answer, decoys) {
@@ -176,10 +176,10 @@ export class BoardRandomizer {
 
 
     randomTwoCards() {
-        let c1 = this.randomCard();
-        let c2 = this.randomCard();
+        let c1 = this.randomCard(false) ;
+        let c2 = this.randomCard(false);
         while (c1.props.fname === c2.props.fname) {
-            c2 = this.randomCard();
+            c2 = this.randomCard(false);
         }
         return [c1, c2];
     };
