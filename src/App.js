@@ -264,6 +264,16 @@ function App() {
         "solveTime": -1,
     });
 
+    let selectErrorMessage = function() {
+      let messages = [
+        "Do Better",
+        "Wrong Choice",
+        "You are bad at this game"
+      ];
+      let index = Math.floor(Math.random() * messages.length);
+      return messages[index]
+    }
+
 
     let updateRight = function () {
         let newScoreboard = deepCopy(scoreboard);
@@ -280,7 +290,7 @@ function App() {
 
     let updateWrong = function () {
         let newScoreboard = deepCopy(scoreboard);
-        alert("DWIGHT YOU IGNORANT SLUT");
+        alert(selectErrorMessage);
         newScoreboard['wrong'] = newScoreboard['wrong'] + 1;
         setScoreboard(newScoreboard);
     };
