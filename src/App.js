@@ -290,7 +290,7 @@ function App() {
 
     let updateWrong = function () {
         let newScoreboard = deepCopy(scoreboard);
-        alert(selectErrorMessage);
+        alert(selectErrorMessage());
         newScoreboard['wrong'] = newScoreboard['wrong'] + 1;
         setScoreboard(newScoreboard);
     };
