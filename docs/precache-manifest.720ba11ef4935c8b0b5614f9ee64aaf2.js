@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "39284791b9ca97514fcab59293db2151",
+    "revision": "0062b610fe86e6609c0881f88ad0168a",
     "url": "https://lilleswing.github.io/set-trainer/index.html"
   },
   {
-    "revision": "b711c1d5722533f25ef7",
+    "revision": "128c6ceb8d14da0c1ee3",
     "url": "https://lilleswing.github.io/set-trainer/static/css/main.9bfc5074.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "https://lilleswing.github.io/set-trainer/static/js/2.0595acea.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b711c1d5722533f25ef7",
-    "url": "https://lilleswing.github.io/set-trainer/static/js/main.ecadd5b3.chunk.js"
+    "revision": "128c6ceb8d14da0c1ee3",
+    "url": "https://lilleswing.github.io/set-trainer/static/js/main.bb4c43f4.chunk.js"
   },
   {
     "revision": "6d6dd3ca7a4655746d80",
