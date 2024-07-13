@@ -176,7 +176,7 @@ export class BoardRandomizer {
 
 
     randomTwoCards() {
-        let c1 = this.randomCard(false) ;
+        let c1 = this.randomCard(false);
         let c2 = this.randomCard(false);
         while (c1.props.fname === c2.props.fname) {
             c2 = this.randomCard(false);
@@ -264,14 +264,14 @@ function App() {
         "solveTime": -1,
     });
 
-    let selectErrorMessage = function() {
-      let messages = [
-        "Do Better",
-        "Wrong Choice",
-        "You are bad at this game"
-      ];
-      let index = Math.floor(Math.random() * messages.length);
-      return messages[index]
+    let selectErrorMessage = function () {
+        let messages = [
+            "Do Better",
+            "Wrong Choice",
+            "You are bad at this game"
+        ];
+        let index = Math.floor(Math.random() * messages.length);
+        return messages[index]
     }
 
 
@@ -301,29 +301,27 @@ function App() {
 
     return (
         <div className="App">
-            <div className="board">
-                <div className='rowC'>
-                    {myCard1}
-                    {myCard2}
-                    <div className={"scoreBoard"}>
-                        <h1 className={"hr"}> Race To 20! </h1>
-                        <h5>Match The Top Two Cards</h5>
+            <div className="AppContainer">
+                {myCard1}
+                {myCard2}
+                <div className={"cell"}>
+                    <div style={{
+                        display: "flex",
+                        flexDirection: "column", alignItems: "center"
+                    }}>
+                        <h1> Race To 20! </h1>
                         <p>
                             Correct: {scoreboard['correct']}
                             <br/>
                             Wrong: {scoreboard['wrong']}
                             {scoreboard['solveTime'] !== -1 &&
-                            <h1>Total Time: {scoreboard['solveTime']}</h1>
+                                <h1>Total Time: {scoreboard['solveTime']}</h1>
                             }
                         </p>
                     </div>
                 </div>
-                <div className='rowC'>
-                    {[possibleAnswers[0], possibleAnswers[1], possibleAnswers[2]]}
-                </div>
-                <div className='rowC'>
-                    {[possibleAnswers[3], possibleAnswers[4], possibleAnswers[5]]}
-                </div>
+                {[possibleAnswers[0], possibleAnswers[1], possibleAnswers[2]]}
+                {[possibleAnswers[3], possibleAnswers[4], possibleAnswers[5]]}
             </div>
         </div>
     );
