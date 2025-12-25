@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "https://set.llleswing.com/static/css/main.fdf26129.css",
-    "main.js": "https://set.llleswing.com/static/js/main.2407cf04.js",
-    "index.html": "https://set.llleswing.com/index.html",
-    "main.fdf26129.css.map": "https://set.llleswing.com/static/css/main.fdf26129.css.map",
-    "main.2407cf04.js.map": "https://set.llleswing.com/static/js/main.2407cf04.js.map"
+    "main.css": "https://set.lilleswing.com/static/css/main.fdf26129.css",
+    "main.js": "https://set.lilleswing.com/static/js/main.86c9a47b.js",
+    "index.html": "https://set.lilleswing.com/index.html",
+    "main.fdf26129.css.map": "https://set.lilleswing.com/static/css/main.fdf26129.css.map",
+    "main.86c9a47b.js.map": "https://set.lilleswing.com/static/js/main.86c9a47b.js.map"
   },
   "entrypoints": [
     "static/css/main.fdf26129.css",
-    "static/js/main.2407cf04.js"
+    "static/js/main.86c9a47b.js"
   ]
 }

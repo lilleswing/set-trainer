@@ -4,6 +4,7 @@ build:
 	rm -rf docs/*
 	npm run build-production
 	cp -r build/* docs/
+	echo "set.lilleswing.com" > docs/CNAME
 
 test-ci: install
 	npm test:ci
