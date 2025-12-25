@@ -2,19 +2,19 @@
 
 build:
 	rm -rf docs/*
-	npm run build-production
-	cp -r build/* docs/
+	npm run build
+	cp -r dist/* docs/
 	echo "set.lilleswing.com" > docs/CNAME
 
 test-ci: install
-	npm test:ci
+	npm run test:ci
 
 install:
 	npm install
 
 dev:
 	npm install
-	npm start
+	npm run dev
 
 package:
 	rm -rf docs.tar.gz

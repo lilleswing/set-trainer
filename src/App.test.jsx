@@ -1,22 +1,6 @@
-import React from 'react';
-import {render, unmountComponentAtNode} from "react-dom";
+import { describe, test, expect } from 'vitest';
+import { render } from '@testing-library/react';
 import App, {BoardRandomizer} from './App';
-
-import {act} from "react-dom/test-utils";
-
-let container = null;
-beforeEach(() => {
-    // setup a DOM element as a render target
-    container = document.createElement("div");
-    document.body.appendChild(container);
-});
-
-afterEach(() => {
-    // cleanup on exiting
-    unmountComponentAtNode(container);
-    container.remove();
-    container = null;
-});
 
 test('Test Random Two Cards Are Different', () => {
     let updateRight = function () {
@@ -61,10 +45,8 @@ test('Test GetOtherCards', () => {
 });
 
 test('Test App Renders', () => {
-    act(() => {
-        render(<App/>, container);
-    });
-    // Check There Are 8 Cards On The Screen
-    expect(document.querySelectorAll(".card").length)
-        .toEqual(8);
+    const { container } = render(<App/>);
+    // Check There Are 8 Cards On The Screen plus the scoreboard cell
+    expect(container.querySelectorAll(".cell").length)
+        .toEqual(9);
 });
