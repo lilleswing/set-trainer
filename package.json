@@ -1,21 +1,22 @@
 {
-  "name": "set-trainer",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^6.4.6",
-    "@testing-library/react": "^16.0.0",
-    "@testing-library/user-event": "^14.5.2",
-    "jest-junit": "^16.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
+    "name": "set-trainer",
+    "version": "0.1.0",
+    "private": true,
+    "homepage": "https://set.lilleswing.com",
+    "dependencies": {
+        "@testing-library/jest-dom": "^6.4.6",
+        "@testing-library/react": "^16.0.0",
+        "@testing-library/user-event": "^14.5.2",
+        "jest-junit": "^16.0.0",
+        "react": "^18.3.1",
+        "react-dom": "^18.3.1",
     "react-scripts": "^5.0.1",
     "yarn": "^1.22.22"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build-production": "PUBLIC_URL=https://lilleswing.github.io/set-trainer/ react-scripts build",
+    "build-production": "PUBLIC_URL=https://set.llleswing.com/ react-scripts build",
     "test": "react-scripts test",
     "test:ci": "CI=1 react-scripts test --env=jsdom --reporters=jest-junit",
     "eject": "react-scripts eject"

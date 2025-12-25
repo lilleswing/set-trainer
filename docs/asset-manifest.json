@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "https://lilleswing.github.io/set-trainer/static/css/main.fdf26129.css",
-    "main.js": "https://lilleswing.github.io/set-trainer/static/js/main.d4aeb66a.js",
-    "index.html": "https://lilleswing.github.io/set-trainer/index.html",
-    "main.fdf26129.css.map": "https://lilleswing.github.io/set-trainer/static/css/main.fdf26129.css.map",
-    "main.d4aeb66a.js.map": "https://lilleswing.github.io/set-trainer/static/js/main.d4aeb66a.js.map"
+    "main.css": "https://set.llleswing.com/static/css/main.fdf26129.css",
+    "main.js": "https://set.llleswing.com/static/js/main.2407cf04.js",
+    "index.html": "https://set.llleswing.com/index.html",
+    "main.fdf26129.css.map": "https://set.llleswing.com/static/css/main.fdf26129.css.map",
+    "main.2407cf04.js.map": "https://set.llleswing.com/static/js/main.2407cf04.js.map"
   },
   "entrypoints": [
     "static/css/main.fdf26129.css",
-    "static/js/main.d4aeb66a.js"
+    "static/js/main.2407cf04.js"
   ]
 }
