@@ -3,7 +3,7 @@ import './App.css';
 import Card from "./Card";
 import ScoreboardModal from "./ScoreboardModal";
 
-let TOTAL_SOLVES = 20;
+let TOTAL_SOLVES = 2;
 
 let ALL_CARDS = [
     "green-double-outline-capsule.jpg",
