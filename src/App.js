@@ -1,6 +1,9 @@
 import React, {useState} from 'react';
 import './App.css';
 import Card from "./Card";
+import ScoreboardModal from "./ScoreboardModal";
+
+let TOTAL_SOLVES = 20;
 
 let ALL_CARDS = [
     "green-double-outline-capsule.jpg",
@@ -260,9 +263,10 @@ function App() {
     const [scoreboard, setScoreboard] = useState({
         "correct": 0,
         "wrong": 0,
-        "startTime": new Date().getTime() / 1000,
+        "startTime": new Date().getTime(),
         "solveTime": -1,
     });
+    const [showModal, setShowModal] = useState(false);
 
     let selectErrorMessage = function () {
         let messages = [
@@ -279,11 +283,12 @@ function App() {
         let newScoreboard = deepCopy(scoreboard);
         newScoreboard['correct'] = newScoreboard['correct'] + 1;
         if (newScoreboard['correct'] === 1) {
-            newScoreboard["startTime"] = new Date().getTime() / 1000;
+            newScoreboard["startTime"] = new Date().getTime();
         }
-        if (newScoreboard['correct'] === 20) {
-            let now = new Date().getTime() / 1000;
+        if (newScoreboard['correct'] === TOTAL_SOLVES) {
+            let now = new Date().getTime();
             newScoreboard['solveTime'] = now - newScoreboard['startTime'];
+            setShowModal(true);
         }
         setScoreboard(newScoreboard);
     };
@@ -298,6 +303,16 @@ function App() {
     let br = new BoardRandomizer(updateRight, updateWrong);
     const [myCard1, myCard2] = br.randomTwoCards();
     const possibleAnswers = br.getOtherCards(myCard1, myCard2);
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+        setScoreboard({
+            "correct": 0,
+            "wrong": 0,
+            "startTime": new Date().getTime(),
+            "solveTime": -1,
+        });
+    };
 
     return (
         <div className="App">
@@ -320,9 +335,14 @@ function App() {
                         </p>
                     </div>
                 </div>
-                {[possibleAnswers[0], possibleAnswers[1], possibleAnswers[2]]}
-                {[possibleAnswers[3], possibleAnswers[4], possibleAnswers[5]]}
+                {possibleAnswers}
             </div>
+            <ScoreboardModal
+                isOpen={showModal}
+                onClose={handleCloseModal}
+                currentTime={scoreboard['solveTime']}
+                wrongCount={scoreboard['wrong']}
+            />
         </div>
     );
 }

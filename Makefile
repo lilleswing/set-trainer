@@ -2,18 +2,18 @@
 
 build:
 	rm -rf docs/*
-	yarn build-production
+	npm run build-production
 	cp -r build/* docs/
 
 test-ci: install
-	yarn test:ci
+	npm test:ci
 
 install:
-	yarn install
+	npm install
 
 dev:
-	yarn install
-	yarn start
+	npm install
+	npm start
 
 package:
 	rm -rf docs.tar.gz
