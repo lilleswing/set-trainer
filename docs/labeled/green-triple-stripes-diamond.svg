@@ -1,0 +1,15 @@
+<svg width="450" height="300" viewBox="0 0 450 300" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#E8E0D5" />
+  <defs>
+  <pattern id="stripes-008F4C" patternUnits="userSpaceOnUse" width="10" height="10">
+    <rect width="10" height="10" fill="#E8E0D5" />
+    <line x1="0" y1="0" x2="10" y2="0" stroke="#008F4C" stroke-width="3" />
+  </pattern>
+  </defs>
+  
+  <polygon points="75,45 117,150 75,255 33,150" fill="url(#stripes-008F4C)" stroke="#008F4C" stroke-width="6" />
+  
+  <polygon points="225,45 267,150 225,255 183,150" fill="url(#stripes-008F4C)" stroke="#008F4C" stroke-width="6" />
+  
+  <polygon points="375,45 417,150 375,255 333,150" fill="url(#stripes-008F4C)" stroke="#008F4C" stroke-width="6" />
+</svg>
